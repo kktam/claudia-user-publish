@@ -1,0 +1,10 @@
+{
+  "lambda": {
+    "role": "claudia-user-publish-executor",
+    "name": "claudia-user-publish",
+    "region": ""
+  },
+  "api": {
+    "id": ""
+  }
+}

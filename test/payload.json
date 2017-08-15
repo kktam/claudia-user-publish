@@ -1,0 +1,40 @@
+{
+    "Records": [
+        {
+            "eventID": "7de3041dd709b024af6f29e4fa13d34c",
+            "eventName": "INSERT",
+            "eventVersion": "1.1",
+            "eventSource": "aws:dynamodb",
+            "awsRegion": "us-west-2",
+            "dynamodb": {
+                "ApproximateCreationDateTime": 1479499740,
+                "Keys": {
+                    "id": {
+                        "S": "5"
+                    },
+		    "userId": {
+			"S": "5"
+		    }
+                },
+                "NewImage": {
+                    "id": {
+                        "S": "5"
+                    },
+                    "userId": {
+                        "S": "5"
+                    },
+                    "firstName": {
+                        "S": "John"
+                    },
+                    "lastName": {
+                        "S": "Doe"
+                    }
+                },
+                "SequenceNumber": "13021600000000001596893679",
+                "SizeBytes": 130,
+                "StreamViewType": "NEW_IMAGE"
+            },
+            "eventSourceARN": "arn:aws:dynamodb:us-west-2:[ACCOUNT]:table/[TABLE]/stream/2017-08-13T15:52:37.812"
+        }
+    ]
+}

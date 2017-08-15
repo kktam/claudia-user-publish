@@ -1,0 +1,19 @@
+{
+  "name": "claudia-user-publish",
+  "version": "1.0.0",
+  "description": "a simple example deploying a proxy API with a Lambda function",
+  "main": "index.js",
+  "scripts": {
+    "start": "claudia create --region us-west-2 --deploy-proxy-api --handler main.handler",
+    "update": "claudia update"
+  },
+  "keywords": [],
+  "author": "Ka Tam <nkltam2003@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "claudia": "^2.14.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.97.0"
+  }
+}
