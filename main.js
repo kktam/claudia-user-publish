@@ -8,7 +8,7 @@ exports.handler = function (event, context, callback) {
     event.Records.forEach((record) => {
         console.log('Stream record: ', JSON.stringify(record, null, 2));
         
-        if (record.eventName == 'INSERT') {
+        if (record.eventName == 'INSERT' || record.eventName == 'MODIFY') {
             var values = record.dynamodb.NewImage;
             //console.log("Debug: insert new image = " + JSON.stringify(values));
 
@@ -27,9 +27,16 @@ exports.handler = function (event, context, callback) {
                         }                        
                     });
                 }
-	        }); 
+            }); 
+            var describe = 'unknown';
+            
+            if (record.eventName == 'INSERT' ) {
+                describe = 'new';
+            } else if (record.eventName == 'MODIFY') {
+                describe = 'updated';
+            }
             var params = {
-                Subject: 'A new registration from ' + firstName + ' ' + lastName, 
+                Subject: 'A ' + describe + ' registration from ' + firstName + ' ' + lastName, 
                 Message: messageContent,
                 TopicArn: 'arn:aws:sns:' + REGION + ':' + ACCOUNT_ID + ':' + TOPIC
             };
